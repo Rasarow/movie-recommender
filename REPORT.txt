@@ -1,0 +1,97 @@
+Movie recommendation system
+
+Purpose and scope
+
+The application supports movie discovery. It recommends previously unrated catalog films and compares two classical approaches with two heuristics. The classical methods are content-based filtering using movie genres and item-based collaborative filtering using common positive ratings. The baselines are rating-count popularity and a genre-specific adjusted-mean rule. The local command application is operational; a streaming frontend and a production HTTP service are outside the implementation.
+
+Dataset and time separation
+
+The official MovieLens latest-small archive, released on 2018-09-26, contains 100,836 ratings from 610 users and 9,742 movie records in this downloaded sample. Its SHA-256 is verified before extraction. Schema checks reject missing fields, duplicate user/movie ratings, invalid rating values and orphan movie IDs. The source, checksum and citation are in data/DATA_SOURCE.json.
+
+Ratings are split globally by timestamp, with approximately the first 80 percent used for training and all later records used for testing. Tied timestamps stay together. Training contains 80,668 ratings, 522 users and 7,867 observed movies. Test contains 20,168 ratings. The last training timestamp is strictly earlier than the first test timestamp. Future ratings do not contribute to similarity, counts, mean ratings or preference profiles.
+
+All methods share the training-observed catalog and exclude every movie already rated by the user. This makes candidate eligibility consistent but excludes entirely new movies. Genres are treated as static metadata from the dataset snapshot; historical genre versions are unavailable, so this is not a complete replay of a historical service. User tags and external plot, cast and language data are not features.
+
+Content-based filtering
+
+Movie genres become smoothed TF-IDF vectors with unit length. The user profile is the weighted sum of vectors for training movies rated at least 4.0. Their weights are rating minus 3.5. The profile is normalized and candidate movies are ranked by cosine similarity. An explicit liked movie adds weight 1.0. An empty profile can start with an explicitly selected genre.
+
+The approach uses film attributes rather than similarities between users. Genres are coarse features: different plots can share the same genre vector. This can produce narrow or repetitive suggestions. More reliable plot, cast and language features could help, but introduce acquisition cost and representation quality problems. Exploration or diversity reranking can broaden discovery while reducing immediate relevance. The current shared catalog does not exploit metadata to recommend completely unseen films.
+
+Item-based collaborative filtering
+
+Binary positive-rating columns describe which users liked each movie. For two movies, similarity is common positive users divided by the square root of the product of their positive-user counts. It is multiplied by common users divided by common users plus 10. Pairs need at least two common positive users. Each seed movie retains at most 40 highest-scoring neighbors.
+
+A user's candidate score sums neighbor similarities weighted by the user's positive preferences. This is a ranking signal, not a predicted star rating. Shrinkage reduces the influence of tiny overlaps. Sparse storage and precomputed neighborhoods limit serving work. Top-40 selection makes the stored graph directed although the original unpruned similarity is symmetric.
+
+Sparse feedback can remove useful niche connections. New films without interactions have no collaborative signal. Minimum-overlap thresholds and shrinkage reduce noise but do not solve cold start. Time decay and refresh could adapt to changing interests, at the cost of extra computation and less historical evidence. Low training ratings currently exclude movies but do not form explicit negative preference signals.
+
+Heuristic baselines
+
+Popularity ranks by the number of distinct training users who rated a movie, regardless of rating value. Activity is not the same as positive opinion. Ties use an adjusted global mean and then the film ID.
+
+The genre rule selects an explicit genre or the largest weighted genre count among liked films. It requires at least five training ratings and ranks movies in that genre by a shrinkage mean. The mean is calculated as count times movie mean plus 20 times global training mean, divided by count plus 20. It tempers a very high score supported by only a few ratings. It is a fixed heuristic rather than a learned collaborative model.
+
+Available method signals are ranked first. Remaining slots use popularity, excluding already rated, explicitly liked and blocked movies. New users with no preferences receive the popularity fallback. Onboarding can supply genres or liked films, but asks the user for effort. Scores have different units, labelled in the returned JSON, and must not be interpreted as calibrated probabilities or added directly in a future hybrid.
+
+Evaluation
+
+The test ranks every unseen training-catalog movie, without sampled negative candidates. Held-out ratings of at least 4.0 define observed relevance. Unrated movies are unknown rather than proven dislikes. There are 116 users with reachable positive test targets. Of 9,326 positive targets, 8,043 are reachable and 1,283 are outside the training catalog. The 86.24 percent reachable fraction measures catalog eligibility, not recommendation accuracy.
+
+Precision@10 is hits divided by ten. Recall@10 is hits divided by reachable positive targets. NDCG@10 rewards relevant movies earlier in the list and normalizes against ideal ordering. Hit rate measures whether a user receives at least one hit. Catalog coverage is the union of recommended movies divided by the training catalog. Genre diversity averages pairwise differences in genre vectors. Novelty measures historical rating-count rarity and does not prove pleasant discovery. RMSE is not used because the models do not predict personal star ratings.
+
+Content-based filtering: Precision@10 0.2664; Recall@10 0.0608; NDCG@10 0.2966; catalog coverage 2.29 percent.
+Item-based collaborative filtering: Precision@10 0.2853; Recall@10 0.0704; NDCG@10 0.3122; catalog coverage 1.28 percent.
+Popularity: Precision@10 0.2776; Recall@10 0.0671; NDCG@10 0.3083; catalog coverage 0.84 percent.
+Genre rule: Precision@10 0.2853; Recall@10 0.0669; NDCG@10 0.3146; catalog coverage 1.13 percent.
+
+The genre heuristic has the largest measured NDCG, while collaborative filtering has the largest recall. Only 28 users have prior training history; 88 are new users. Without onboarding the new-user lists are identical popularity fallback. There are no users with one to four training ratings in this evaluation cohort. Aggregate results are therefore dominated by fallback behavior.
+
+Paired user bootstrap with 1,000 resamples and seed 42 estimates NDCG differences against popularity. The all-user interval for collaborative filtering is approximately -0.0086 to 0.0148. The other nontrivial intervals also include zero. These results do not establish a reliable improvement over popularity. Bootstrap does not remove exposure bias, sample selection or shared-item dependence. Parameters were fixed rather than optimized on this test; future tuning needs chronological training, validation and untouched test windows.
+
+Vulnerabilities and mitigations
+
+The cold-start checks show popularity fallback without preferences, Sci-Fi suggestions after genre selection, and content matching from two selected films. These are onboarding examples and do not provide future test preferences to the evaluator.
+
+An independent popularity-count experiment adds 317 synthetic one-rating accounts to a rarely rated film. Its count-based rank changes from 5,423 to 1. The experiment does not modify the fitted model or test data and does not test poisoning of the collaborative graph. A minimum-five-rated-films account filter removes these toy accounts. It excludes no legitimate users in this training sample, but would exclude real newcomers and can be bypassed by fabricated history. Account controls need anomaly review and attention to false positives.
+
+Popularity feedback can favor well-known films, including through tie breaking. Coverage and novelty reveal some exposure concentration. Controlled exploration can promote less visible movies but may reduce immediate clicks. Genre diversity is not demographic or creator fairness. The dataset lacks suitable demographic and provider labels for such claims.
+
+Taste histories can be sensitive. Operational logs omit user IDs and film choices; public dataset identifiers remain in evaluation logic. An explicit block list is available, but region rights, authentication and maturity filtering are not implemented. Reliable policy metadata, consent and deletion behavior would be needed in a real service.
+
+Production operation
+
+A long-running worker should load the model once, resolve the authorized profile, generate eligible candidates, exclude watched or prohibited movies, score them and apply explicit policies. Cache keys need profile, model and policy versions; stale caches can otherwise ignore new preferences or availability. Refreshed artifacts should be published atomically with rollback available. These production controls are proposals.
+
+Core recommendation latency was measured sequentially with an already-loaded model. It excludes startup, loading, transport, output serialization and log writing. Saved artifacts occupy approximately 1.10 MB in this run. Process RSS after fitting is not peak fitting memory. Sparse co-occurrence construction can still become large before neighbor pruning, so a much larger catalog would need batching, bounded retrieval or approximate neighborhoods, with recall and memory measured.
+
+Latency spikes can be reduced with resident models, bounded candidate sets, caching and worker scaling; this adds memory, stale-data risks and infrastructure cost. More frequent refresh improves freshness but increases computation. Windowed feedback responds to drift but reduces evidence for rare films. Availability and age filters reduce eligible candidates. Corrupt artifacts, duplicate events and delayed feedback need schema checks, versioning and idempotent ingestion. Input-validation failures should be distinguished from service failures.
+
+Monitoring and business value
+
+The application logs actual local requests and summarizes request counts, error rates, p50, p95 and p99 latency, fallback slots and short lists. The demonstration log is not production traffic. Its successful requests do not establish availability or throughput under concurrency. Business metrics remain null because there are no real impressions, clicks, playback or return events.
+
+Offline relevance, coverage, diversity, novelty and eligibility should be tracked by warm and new-user cohorts. Data health also includes missing fields, duplicates, history age, catalog size and graph size. Serving monitoring needs infrastructure failures, latency distributions, throughput, artifact age and recommendation-size changes.
+
+In a live service, item CTR requires attributed clicks and valid visible item impressions. Watch-start conversion requires eligible exposed sessions and intentional attributed starts. Qualified watch minutes, rapid abandonment, negative feedback and returning-viewer retention are useful guardrails. More detailed events support attribution but increase privacy and retention responsibilities. Longer viewing is not automatically beneficial if it comes from unwanted autoplay.
+
+An online experiment should use stable random user assignment, an identical interface and candidate policy, and a prespecified challenger against popularity. Attribution windows, primary metric, guardrails, sample size, power and duration should be defined before collecting results. Baseline traffic rates are currently unavailable, so no numeric power or uplift estimate is reported. Repeated favorable peeking should be avoided. Segment and data-integrity checks are needed before rollout.
+
+Expected personalization and discovery benefits remain hypotheses. The actual evidence establishes a working local application, measured historical ranking and small artifacts. It does not establish improved retention, revenue or viewing conversion. A simple baseline remains a reasonable comparison and rollback option.
+
+Improvements
+
+First add chronological validation for neighborhood size, shrinkage and heuristic thresholds. Next evaluate richer metadata and a verified new-film pool. A hybrid can combine ranks or validated normalized scores, because raw model scores have incompatible units. Time decay and controlled exploration need cohort-level evaluation. Real event attribution and concurrent-load testing should precede a production rollout.
+
+Sources
+
+MovieLens documentation: https://files.grouplens.org/datasets/movielens/ml-latest-small-README.html
+Dataset citation: F. Maxwell Harper and Joseph A. Konstan. The MovieLens Datasets: History and Context. 2015. DOI: 10.1145/2827872.
+Item-based collaborative filtering: https://grouplens.org/site-content/uploads/Item-Based-WWW-2001.pdf
+TF-IDF implementation: https://scikit-learn.org/1.7/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+Content-based limitations: https://developers.google.com/machine-learning/recommendation/content-based/summary
+Collaborative limitations: https://developers.google.com/machine-learning/recommendation/collaborative/summary
+Controlled experiments: https://ai.stanford.edu/~ronnyk/GuideControlledExperiments.pdf
+MovieLens research and commercial-use conditions remain those of the original dataset.
+
+Recorded evaluation: 2026-10-09T00:32:51.834760+00:00. Core p95 latency ranges from 14.25 to 16.63 ms in this run on a shared machine. No production load test was performed.
