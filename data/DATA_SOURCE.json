@@ -1,0 +1,8 @@
+{
+  "source": "https://files.grouplens.org/datasets/movielens/ml-latest-small.zip",
+  "sha256": "696d65a3dfceac7c45750ad32df2c259311949efec81f0f144fdfb91ebc9e436",
+  "dataset": "MovieLens latest-small, release 2018-09-26",
+  "citation": "F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. DOI: 10.1145/2827872",
+  "upstream_readme": "https://files.grouplens.org/datasets/movielens/ml-latest-small-README.html",
+  "note": "Raw data and fitted artifacts are excluded from Git. Research/education use; upstream license applies."
+}
