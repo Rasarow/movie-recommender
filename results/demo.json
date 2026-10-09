@@ -1,0 +1,1135 @@
+{
+  "offline_network_blocked": true,
+  "requests": [
+    {
+      "method": "content",
+      "user_id": 1,
+      "known_training_user": true,
+      "selected_genre": "Action",
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 0,
+      "recommendations": [
+        {
+          "movie_id": 5657,
+          "title": "Flashback (1990)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Drama"
+          ],
+          "score": 0.785491,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 1
+        },
+        {
+          "movie_id": 6990,
+          "title": "The Great Train Robbery (1978)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Drama"
+          ],
+          "score": 0.785491,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 1
+        },
+        {
+          "movie_id": 55116,
+          "title": "Hunting Party, The (2007)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 0.779727,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 2
+        },
+        {
+          "movie_id": 6503,
+          "title": "Charlie's Angels: Full Throttle (2003)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 0.762507,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 23
+        },
+        {
+          "movie_id": 80219,
+          "title": "Machete (2010)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 0.762507,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 8
+        },
+        {
+          "movie_id": 8968,
+          "title": "After the Sunset (2004)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 0.762507,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 5
+        },
+        {
+          "movie_id": 26184,
+          "title": "Diamond Arm, The (Brilliantovaya ruka) (1968)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 0.762507,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 1
+        },
+        {
+          "movie_id": 4818,
+          "title": "Extreme Days (2001)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Drama"
+          ],
+          "score": 0.758371,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 1
+        },
+        {
+          "movie_id": 4956,
+          "title": "Stunt Man, The (1980)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Drama",
+            "Romance",
+            "Thriller"
+          ],
+          "score": 0.753968,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 3
+        },
+        {
+          "movie_id": 60074,
+          "title": "Hancock (2008)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Fantasy"
+          ],
+          "score": 0.746285,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 20
+        }
+      ],
+      "request_id": "9f9dfcae-7a16-4684-89d4-e1939819a96e",
+      "query_latency_ms": 15.2841
+    },
+    {
+      "method": "item_cf",
+      "user_id": 1,
+      "known_training_user": true,
+      "selected_genre": "Action",
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 0,
+      "recommendations": [
+        {
+          "movie_id": 858,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 26.045395,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 163
+        },
+        {
+          "movie_id": 2762,
+          "title": "Sixth Sense, The (1999)",
+          "genres": [
+            "Drama",
+            "Horror",
+            "Mystery"
+          ],
+          "score": 18.07597,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 151
+        },
+        {
+          "movie_id": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 15.879519,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 200
+        },
+        {
+          "movie_id": 1036,
+          "title": "Die Hard (1988)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Thriller"
+          ],
+          "score": 14.844247,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 120
+        },
+        {
+          "movie_id": 1221,
+          "title": "Godfather: Part II, The (1974)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 14.569712,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 110
+        },
+        {
+          "movie_id": 4226,
+          "title": "Memento (2000)",
+          "genres": [
+            "Mystery",
+            "Thriller"
+          ],
+          "score": 13.825138,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 128
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 13.781412,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 256
+        },
+        {
+          "movie_id": 2918,
+          "title": "Ferris Bueller's Day Off (1986)",
+          "genres": [
+            "Comedy"
+          ],
+          "score": 12.318037,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 91
+        },
+        {
+          "movie_id": 541,
+          "title": "Blade Runner (1982)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 11.889471,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 109
+        },
+        {
+          "movie_id": 912,
+          "title": "Casablanca (1942)",
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "score": 11.502156,
+          "score_type": "weighted_neighbor_similarity_sum",
+          "source": "item_cf",
+          "reason": "Similarity in the co-like patterns of historical training users.",
+          "training_rating_count": 91
+        }
+      ],
+      "request_id": "8e750a95-cabe-4aec-bf6e-598446177cb0",
+      "query_latency_ms": 15.0566
+    },
+    {
+      "method": "popular",
+      "user_id": 1,
+      "known_training_user": true,
+      "selected_genre": "Action",
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 0,
+      "recommendations": [
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 256.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 256 distinct training users.",
+          "training_rating_count": 256
+        },
+        {
+          "movie_id": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 200.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 200 distinct training users.",
+          "training_rating_count": 200
+        },
+        {
+          "movie_id": 150,
+          "title": "Apollo 13 (1995)",
+          "genres": [
+            "Adventure",
+            "Drama",
+            "IMAX"
+          ],
+          "score": 184.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 184 distinct training users.",
+          "training_rating_count": 184
+        },
+        {
+          "movie_id": 380,
+          "title": "True Lies (1994)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Romance",
+            "Thriller"
+          ],
+          "score": 168.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 168 distinct training users.",
+          "training_rating_count": 168
+        },
+        {
+          "movie_id": 32,
+          "title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
+          "genres": [
+            "Mystery",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 165.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 165 distinct training users.",
+          "training_rating_count": 165
+        },
+        {
+          "movie_id": 858,
+          "title": "Godfather, The (1972)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 163.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 163 distinct training users.",
+          "training_rating_count": 163
+        },
+        {
+          "movie_id": 588,
+          "title": "Aladdin (1992)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Musical"
+          ],
+          "score": 161.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 161 distinct training users.",
+          "training_rating_count": 161
+        },
+        {
+          "movie_id": 377,
+          "title": "Speed (1994)",
+          "genres": [
+            "Action",
+            "Romance",
+            "Thriller"
+          ],
+          "score": 160.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 160 distinct training users.",
+          "training_rating_count": 160
+        },
+        {
+          "movie_id": 4993,
+          "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ],
+          "score": 152.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 152 distinct training users.",
+          "training_rating_count": 152
+        },
+        {
+          "movie_id": 2762,
+          "title": "Sixth Sense, The (1999)",
+          "genres": [
+            "Drama",
+            "Horror",
+            "Mystery"
+          ],
+          "score": 151.0,
+          "score_type": "training_rating_count",
+          "source": "popular",
+          "reason": "Rated by 151 distinct training users.",
+          "training_rating_count": 151
+        }
+      ],
+      "request_id": "81187a31-f94e-4540-bd13-721910411ad4",
+      "query_latency_ms": 15.7304
+    },
+    {
+      "method": "genre",
+      "user_id": 1,
+      "known_training_user": true,
+      "selected_genre": "Action",
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 0,
+      "recommendations": [
+        {
+          "movie_id": 58559,
+          "title": "Dark Knight, The (2008)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "IMAX"
+          ],
+          "score": 4.144282,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 99
+        },
+        {
+          "movie_id": 68157,
+          "title": "Inglourious Basterds (2009)",
+          "genres": [
+            "Action",
+            "Drama",
+            "War"
+          ],
+          "score": 4.059565,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 50
+        },
+        {
+          "movie_id": 7153,
+          "title": "Lord of the Rings: The Return of the King, The (2003)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ],
+          "score": 4.052369,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 136
+        },
+        {
+          "movie_id": 541,
+          "title": "Blade Runner (1982)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 4.028446,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 109
+        },
+        {
+          "movie_id": 79132,
+          "title": "Inception (2010)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Sci-Fi",
+            "Thriller",
+            "IMAX"
+          ],
+          "score": 4.025918,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 83
+        },
+        {
+          "movie_id": 908,
+          "title": "North by Northwest (1959)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Mystery",
+            "Romance",
+            "Thriller"
+          ],
+          "score": 3.995594,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 55
+        },
+        {
+          "movie_id": 1201,
+          "title": "Good, the Bad and the Ugly, The (Buono, il brutto, il cattivo, Il) (1966)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Western"
+          ],
+          "score": 3.989748,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 61
+        },
+        {
+          "movie_id": 3275,
+          "title": "Boondock Saints, The (2000)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 3.984622,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 34
+        },
+        {
+          "movie_id": 1233,
+          "title": "Boot, Das (Boat, The) (1981)",
+          "genres": [
+            "Action",
+            "Drama",
+            "War"
+          ],
+          "score": 3.977062,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 38
+        },
+        {
+          "movie_id": 2019,
+          "title": "Seven Samurai (Shichinin no samurai) (1954)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Drama"
+          ],
+          "score": 3.970477,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Action.",
+          "training_rating_count": 42
+        }
+      ],
+      "request_id": "96c16830-8f4e-4084-acf7-5c0e7aec8b58",
+      "query_latency_ms": 19.0685
+    },
+    {
+      "method": "item_cf",
+      "user_id": null,
+      "known_training_user": false,
+      "selected_genre": null,
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 10,
+      "recommendations": [
+        {
+          "movie_id": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": [
+            "Comedy",
+            "Drama",
+            "Romance",
+            "War"
+          ],
+          "score": 267.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 267 distinct training users.",
+          "training_rating_count": 267
+        },
+        {
+          "movie_id": 296,
+          "title": "Pulp Fiction (1994)",
+          "genres": [
+            "Comedy",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "score": 264.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 264 distinct training users.",
+          "training_rating_count": 264
+        },
+        {
+          "movie_id": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "score": 256.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 256 distinct training users.",
+          "training_rating_count": 256
+        },
+        {
+          "movie_id": 593,
+          "title": "Silence of the Lambs, The (1991)",
+          "genres": [
+            "Crime",
+            "Horror",
+            "Thriller"
+          ],
+          "score": 235.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 235 distinct training users.",
+          "training_rating_count": 235
+        },
+        {
+          "movie_id": 2571,
+          "title": "Matrix, The (1999)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 219.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 219 distinct training users.",
+          "training_rating_count": 219
+        },
+        {
+          "movie_id": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 218.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 218 distinct training users.",
+          "training_rating_count": 218
+        },
+        {
+          "movie_id": 110,
+          "title": "Braveheart (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "War"
+          ],
+          "score": 212.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 212 distinct training users.",
+          "training_rating_count": 212
+        },
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 206.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 206 distinct training users.",
+          "training_rating_count": 206
+        },
+        {
+          "movie_id": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": [
+            "Action",
+            "Sci-Fi"
+          ],
+          "score": 200.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 200 distinct training users.",
+          "training_rating_count": 200
+        },
+        {
+          "movie_id": 527,
+          "title": "Schindler's List (1993)",
+          "genres": [
+            "Drama",
+            "War"
+          ],
+          "score": 188.0,
+          "score_type": "training_rating_count",
+          "source": "popularity_fallback",
+          "reason": "Rated by 188 distinct training users.",
+          "training_rating_count": 188
+        }
+      ],
+      "request_id": "aae2c8dd-86f5-4288-a524-1dfd5bc96ff1",
+      "query_latency_ms": 2.8037
+    },
+    {
+      "method": "genre",
+      "user_id": null,
+      "known_training_user": false,
+      "selected_genre": "Sci-Fi",
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 0,
+      "recommendations": [
+        {
+          "movie_id": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 4.197653,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 206
+        },
+        {
+          "movie_id": 2571,
+          "title": "Matrix, The (1999)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 4.155521,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 219
+        },
+        {
+          "movie_id": 1196,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 4.152152,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 175
+        },
+        {
+          "movie_id": 7361,
+          "title": "Eternal Sunshine of the Spotless Mind (2004)",
+          "genres": [
+            "Drama",
+            "Romance",
+            "Sci-Fi"
+          ],
+          "score": 4.118512,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 108
+        },
+        {
+          "movie_id": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ],
+          "score": 4.058624,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 162
+        },
+        {
+          "movie_id": 541,
+          "title": "Blade Runner (1982)",
+          "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 4.028446,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 109
+        },
+        {
+          "movie_id": 79132,
+          "title": "Inception (2010)",
+          "genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Sci-Fi",
+            "Thriller",
+            "IMAX"
+          ],
+          "score": 4.025918,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 83
+        },
+        {
+          "movie_id": 1199,
+          "title": "Brazil (1985)",
+          "genres": [
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 3.981522,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 52
+        },
+        {
+          "movie_id": 1206,
+          "title": "Clockwork Orange, A (1971)",
+          "genres": [
+            "Crime",
+            "Drama",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 3.955207,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 99
+        },
+        {
+          "movie_id": 32,
+          "title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
+          "genres": [
+            "Mystery",
+            "Sci-Fi",
+            "Thriller"
+          ],
+          "score": 3.94416,
+          "score_type": "bayesian_global_rating",
+          "source": "genre",
+          "reason": "High shrinkage-adjusted mean rating in Sci-Fi.",
+          "training_rating_count": 165
+        }
+      ],
+      "request_id": "5f5490f0-f379-4859-b3b7-573e21ec5681",
+      "query_latency_ms": 11.4945
+    },
+    {
+      "method": "content",
+      "user_id": null,
+      "known_training_user": false,
+      "selected_genre": "Adventure",
+      "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+      "requested_k": 10,
+      "returned_k": 10,
+      "fallback_item_count": 0,
+      "recommendations": [
+        {
+          "movie_id": 6350,
+          "title": "Laputa: Castle in the Sky (Tenkû no shiro Rapyuta) (1986)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Children",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.926827,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 19
+        },
+        {
+          "movie_id": 52287,
+          "title": "Meet the Robinsons (2007)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 0.894642,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 8
+        },
+        {
+          "movie_id": 40339,
+          "title": "Chicken Little (2005)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Sci-Fi"
+          ],
+          "score": 0.894642,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 4
+        },
+        {
+          "movie_id": 62956,
+          "title": "Futurama: Bender's Game (2008)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Comedy",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.891474,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 9
+        },
+        {
+          "movie_id": 673,
+          "title": "Space Jam (1996)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.882801,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 44
+        },
+        {
+          "movie_id": 130520,
+          "title": "Home (2015)",
+          "genres": [
+            "Adventure",
+            "Animation",
+            "Children",
+            "Comedy",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.882801,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 2
+        },
+        {
+          "movie_id": 546,
+          "title": "Super Mario Bros. (1993)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Children",
+            "Comedy",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.882193,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 19
+        },
+        {
+          "movie_id": 3745,
+          "title": "Titan A.E. (2000)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Children",
+            "Sci-Fi"
+          ],
+          "score": 0.88092,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 27
+        },
+        {
+          "movie_id": 37830,
+          "title": "Final Fantasy VII: Advent Children (2004)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.877761,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 7
+        },
+        {
+          "movie_id": 5999,
+          "title": "Heavy Metal 2000 (2000)",
+          "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Fantasy",
+            "Sci-Fi"
+          ],
+          "score": 0.877761,
+          "score_type": "genre_cosine_similarity",
+          "source": "content",
+          "reason": "Genre similarity to your liked-film profile or selected genre.",
+          "training_rating_count": 1
+        }
+      ],
+      "request_id": "9c91e0ea-cc72-44cf-8353-cc0d8ee5ff4f",
+      "query_latency_ms": 5.1902
+    }
+  ]
+}

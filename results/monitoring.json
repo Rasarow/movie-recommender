@@ -1,0 +1,27 @@
+{
+  "scope": "Actual local request events only; not production traffic.",
+  "request_count": 7,
+  "successful_requests": 7,
+  "error_rate": 0.0,
+  "latency_p50_ms": 15.0595,
+  "latency_p95_ms": 18.0695,
+  "latency_p99_ms": 18.8707,
+  "fallback_slot_rate": 0.142857,
+  "short_list_requests": 0,
+  "methods": {
+    "content": 2,
+    "item_cf": 2,
+    "popular": 1,
+    "genre": 2
+  },
+  "model_versions": {
+    "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2": 7
+  },
+  "business_metrics": {
+    "ctr": null,
+    "watch_start_conversion": null,
+    "watch_minutes": null,
+    "retention": null
+  },
+  "business_metric_status": "No real impression, click, playback or retention events were collected."
+}

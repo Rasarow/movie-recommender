@@ -1,0 +1,73 @@
+{
+  "cold_start": {
+    "unknown_user_id": 100609,
+    "without_preferences": {
+      "method": "item_cf",
+      "fallback_items": 10,
+      "top_movies": [
+        "Forrest Gump (1994)",
+        "Pulp Fiction (1994)",
+        "Shawshank Redemption, The (1994)",
+        "Silence of the Lambs, The (1991)",
+        "Matrix, The (1999)",
+        "Jurassic Park (1993)",
+        "Braveheart (1995)",
+        "Star Wars: Episode IV - A New Hope (1977)",
+        "Terminator 2: Judgment Day (1991)",
+        "Schindler's List (1993)"
+      ]
+    },
+    "with_explicit_genre": {
+      "genre": "Sci-Fi",
+      "fallback_items": 0,
+      "top_movies": [
+        "Star Wars: Episode IV - A New Hope (1977)",
+        "Matrix, The (1999)",
+        "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "Eternal Sunshine of the Spotless Mind (2004)",
+        "Star Wars: Episode VI - Return of the Jedi (1983)",
+        "Blade Runner (1982)",
+        "Inception (2010)",
+        "Brazil (1985)",
+        "Clockwork Orange, A (1971)",
+        "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)"
+      ]
+    },
+    "with_two_liked_films": {
+      "seed_movie_ids": [
+        1,
+        260
+      ],
+      "fallback_items": 0,
+      "top_movies": [
+        "Laputa: Castle in the Sky (Tenkû no shiro Rapyuta) (1986)",
+        "Meet the Robinsons (2007)",
+        "Chicken Little (2005)",
+        "Futurama: Bender's Game (2008)",
+        "Space Jam (1996)",
+        "Home (2015)",
+        "Super Mario Bros. (1993)",
+        "Titan A.E. (2000)",
+        "Final Fantasy VII: Advent Children (2004)",
+        "Heavy Metal 2000 (2000)"
+      ]
+    }
+  },
+  "popularity_manipulation": {
+    "scope": "Synthetic single-film accounts added only to a separate count-vector experiment; real models/test data unchanged.",
+    "target_movie_id": 49,
+    "target_title": "When Night Is Falling (1995)",
+    "target_initial_rating_count": 1,
+    "synthetic_accounts": 317,
+    "rank_before": 5423,
+    "rank_after": 1,
+    "simple_history_filter": {
+      "minimum_rated_films": 5,
+      "rank_before": 5423,
+      "rank_after": 5423,
+      "excluded_legitimate_training_users": 0,
+      "excluded_legitimate_training_ratings": 0,
+      "tradeoff": "Single-rating fake accounts are removed, but legitimate new/sparse accounts are also excluded. Coordinated accounts can build history."
+    }
+  }
+}

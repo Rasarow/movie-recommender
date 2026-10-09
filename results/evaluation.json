@@ -1,0 +1,244 @@
+{
+  "timestamp_utc": "2026-10-09T00:32:51.834760+00:00",
+  "offline_network_blocked": true,
+  "model_version": "movielens-696d65a3-cutoff-1458635162-k40-s10.0-c2",
+  "k": 10,
+  "protocol": "Global 80/20 chronological split; identical train-observed catalog; all unseen candidates, no sampled negatives.",
+  "relevance": "Held-out observed ratings >=4.0; targets outside the training catalog are excluded and counted separately.",
+  "target_users_with_test_likes": 116,
+  "evaluated_users": 116,
+  "excluded_users_without_reachable_targets": 0,
+  "reachable_positive_targets": 8043,
+  "unreachable_positive_targets": 1283,
+  "reachable_target_fraction": 0.862428,
+  "summary": {
+    "content": {
+      "precision_at_k": 0.266379,
+      "recall_at_k": 0.060848,
+      "ndcg_at_k": 0.296585,
+      "hit_rate_at_k": 0.724138,
+      "genre_diversity": 0.58292,
+      "historical_novelty_bits": 9.5429,
+      "users": 116,
+      "catalog_coverage": 0.02288,
+      "unique_recommended_movies": 180,
+      "latency_p50_ms": 2.4921,
+      "latency_p95_ms": 16.2868,
+      "fallback_slot_rate": 0.758621
+    },
+    "item_cf": {
+      "precision_at_k": 0.285345,
+      "recall_at_k": 0.070421,
+      "ndcg_at_k": 0.312209,
+      "hit_rate_at_k": 0.741379,
+      "genre_diversity": 0.735008,
+      "historical_novelty_bits": 8.829389,
+      "users": 116,
+      "catalog_coverage": 0.012838,
+      "unique_recommended_movies": 101,
+      "latency_p50_ms": 2.4501,
+      "latency_p95_ms": 14.5122,
+      "fallback_slot_rate": 0.758621
+    },
+    "popular": {
+      "precision_at_k": 0.277586,
+      "recall_at_k": 0.067117,
+      "ndcg_at_k": 0.308269,
+      "hit_rate_at_k": 0.715517,
+      "genre_diversity": 0.728157,
+      "historical_novelty_bits": 8.69422,
+      "users": 116,
+      "catalog_coverage": 0.008389,
+      "unique_recommended_movies": 66,
+      "latency_p50_ms": 2.4389,
+      "latency_p95_ms": 14.2496,
+      "fallback_slot_rate": 0.0
+    },
+    "genre": {
+      "precision_at_k": 0.285345,
+      "recall_at_k": 0.066947,
+      "ndcg_at_k": 0.314608,
+      "hit_rate_at_k": 0.75,
+      "genre_diversity": 0.690472,
+      "historical_novelty_bits": 8.979161,
+      "users": 116,
+      "catalog_coverage": 0.011313,
+      "unique_recommended_movies": 89,
+      "latency_p50_ms": 2.4293,
+      "latency_p95_ms": 16.6293,
+      "fallback_slot_rate": 0.758621
+    }
+  },
+  "cohort_metrics": {
+    "content": {
+      "warm": {
+        "users": 28,
+        "precision_at_k": 0.028571,
+        "recall_at_k": 0.013372,
+        "ndcg_at_k": 0.03729,
+        "hit_rate_at_k": 0.285714
+      },
+      "sparse": {
+        "users": 0,
+        "precision_at_k": null,
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "hit_rate_at_k": null
+      },
+      "cold": {
+        "users": 88,
+        "precision_at_k": 0.342045,
+        "recall_at_k": 0.075954,
+        "ndcg_at_k": 0.379088,
+        "hit_rate_at_k": 0.863636
+      }
+    },
+    "item_cf": {
+      "warm": {
+        "users": 28,
+        "precision_at_k": 0.107143,
+        "recall_at_k": 0.053035,
+        "ndcg_at_k": 0.102015,
+        "hit_rate_at_k": 0.357143
+      },
+      "sparse": {
+        "users": 0,
+        "precision_at_k": null,
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "hit_rate_at_k": null
+      },
+      "cold": {
+        "users": 88,
+        "precision_at_k": 0.342045,
+        "recall_at_k": 0.075954,
+        "ndcg_at_k": 0.379088,
+        "hit_rate_at_k": 0.863636
+      }
+    },
+    "popular": {
+      "warm": {
+        "users": 28,
+        "precision_at_k": 0.075,
+        "recall_at_k": 0.039344,
+        "ndcg_at_k": 0.085692,
+        "hit_rate_at_k": 0.25
+      },
+      "sparse": {
+        "users": 0,
+        "precision_at_k": null,
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "hit_rate_at_k": null
+      },
+      "cold": {
+        "users": 88,
+        "precision_at_k": 0.342045,
+        "recall_at_k": 0.075954,
+        "ndcg_at_k": 0.379088,
+        "hit_rate_at_k": 0.863636
+      }
+    },
+    "genre": {
+      "warm": {
+        "users": 28,
+        "precision_at_k": 0.107143,
+        "recall_at_k": 0.038639,
+        "ndcg_at_k": 0.111954,
+        "hit_rate_at_k": 0.392857
+      },
+      "sparse": {
+        "users": 0,
+        "precision_at_k": null,
+        "recall_at_k": null,
+        "ndcg_at_k": null,
+        "hit_rate_at_k": null
+      },
+      "cold": {
+        "users": 88,
+        "precision_at_k": 0.342045,
+        "recall_at_k": 0.075954,
+        "ndcg_at_k": 0.379088,
+        "hit_rate_at_k": 0.863636
+      }
+    }
+  },
+  "paired_ndcg_differences_vs_popular": {
+    "all": {
+      "content": {
+        "mean_difference": -0.011683,
+        "ci95_low": -0.03458,
+        "ci95_high": 0.004945,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      },
+      "item_cf": {
+        "mean_difference": 0.00394,
+        "ci95_low": -0.008571,
+        "ci95_high": 0.014833,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      },
+      "popular": {
+        "mean_difference": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      },
+      "genre": {
+        "mean_difference": 0.006339,
+        "ci95_low": -0.011774,
+        "ci95_high": 0.022273,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      }
+    },
+    "warm": {
+      "content": {
+        "mean_difference": -0.048402,
+        "ci95_low": -0.129868,
+        "ci95_high": 0.015968,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      },
+      "item_cf": {
+        "mean_difference": 0.016323,
+        "ci95_low": -0.028556,
+        "ci95_high": 0.063898,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      },
+      "popular": {
+        "mean_difference": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      },
+      "genre": {
+        "mean_difference": 0.026262,
+        "ci95_low": -0.042187,
+        "ci95_high": 0.089289,
+        "bootstrap_repetitions": 1000,
+        "seed": 42
+      }
+    }
+  },
+  "wall_seconds": 2.5956,
+  "process_rss_after_evaluation_mb": 144.98,
+  "versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.16.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2"
+  },
+  "limitations": [
+    "Unobserved films are not confirmed dislikes; exposure is not randomized.",
+    "MovieLens is a historical educational sample, not current streaming-service traffic.",
+    "No CTR, conversion, revenue, watch time or retention has been measured.",
+    "Scores are ranking signals, not calibrated probabilities or personalized rating predictions.",
+    "Cold users receive popularity fallback without externally supplied preferences.",
+    "The bootstrap interval does not remove exposure bias or temporal nonstationarity."
+  ]
+}
